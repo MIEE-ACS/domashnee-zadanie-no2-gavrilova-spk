@@ -93,11 +93,8 @@ namespace Hw_2
             Console.Write("Введите радиус:    ");
             string str = Console.ReadLine();
             double R = Check(ref str, 1);
-
-            Console.Write("Введите значение аргумента :    ");
-            str = Console.ReadLine();
-            double X_0 = Check(ref str);
-            double Y=999, X;
+            
+            double X;
             bool k = false;
 
 
@@ -105,15 +102,9 @@ namespace Hw_2
             {
                 Find_fun(X, R, ref k);
             }
-            k = false;
+            Console.WriteLine("Функция определена на отрезке {0:N3} < х < {1:N3} ", -10, 6);
 
-                Console.WriteLine("------------------------------------------------------");     //вывод значения по аргументу
-            if (X_0 < -10 || X_0 > 6)
-                Console.WriteLine("Функция определена на отрезке {0:N3} < х < {1:N3} ", -10, 6);
-            else
-                Find_fun(X_0, R, ref k);
-
-                Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
