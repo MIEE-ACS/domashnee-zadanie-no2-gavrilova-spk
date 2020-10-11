@@ -55,6 +55,12 @@ namespace Hw_2
             return y;
         }
 
+        static double Fun_4(double x)
+        {
+            double y = 0 * x;
+            return y;
+        }
+
         static int Find_fun( double X, double R, ref bool k )
         {
             if (R < 3 && X > R && X < (6 - R))        //неопределенность X из-за радиуса
@@ -80,7 +86,15 @@ namespace Hw_2
                 else
                     Console.WriteLine(". ");
             }
-            else                          // вторая дуга
+            else if(X >= 6 && X <= 8)
+            {
+                Console.Write("Значение функции:   x =  {0:N3};  y = {1:N3}", X, Fun_4(X));
+                if (R != 0 && X == 6)
+                    Console.WriteLine(",  {0:N3}.", Fun_3(X, R));
+                else
+                    Console.WriteLine(". ");
+            }
+            else                         // вторая дуга
             {
                 Console.WriteLine("Значение функции:   x =  {0:N3};  y = {1:N3}.", X, Fun_3(X, R));
             }
@@ -97,12 +111,12 @@ namespace Hw_2
             double X;
             bool k = false;
 
-
-            for (X = -10; X <= 6; X = Math.Round(X + 0.2, 3))   //Вывод всех значений
+            Console.WriteLine("Функция определена на отрезке {0:N3} < х < {1:N3} ", -10, 8);
+            for (X = -10; X <= 8; X = Math.Round(X + 0.2, 3))   //Вывод всех значений
             {
                 Find_fun(X, R, ref k);
             }
-            Console.WriteLine("Функция определена на отрезке {0:N3} < х < {1:N3} ", -10, 6);
+            
 
             Console.ReadKey();
         }
